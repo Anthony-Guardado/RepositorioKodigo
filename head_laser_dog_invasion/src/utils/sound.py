@@ -1,11 +1,23 @@
-import numpy as np
+import sys
 import pygame
+
+# Intentamos importar numpy, pero si falla no rompemos el juego
+try:
+    import numpy as np
+except ImportError:
+    np = None
 
 _sounds = {}
 
+# Detectamos si estamos en el navegador
+is_web = sys.platform == "emscripten"
+
 def generate_square_wave(freq, duration, volume=0.1, wave_type='square'):
-    """Genera un sonido sintetizado usando numpy y pygame.sndarray."""
-    if not pygame.mixer.get_init():
+    """Genera un sonido sintetizado usando numpy y pygame.sndarray. 
+    En web devuelve None para no crashear el navegador."""
+    
+    # Si estamos en web o numpy no cargó, cancelamos la generación
+    if is_web or np is None or not pygame.mixer.get_init():
         return None
         
     sample_rate, format_id, channels = pygame.mixer.get_init()
@@ -15,7 +27,6 @@ def generate_square_wave(freq, duration, volume=0.1, wave_type='square'):
     if wave_type == 'square':
         wave = np.sign(np.sin(freq * t * 2 * np.pi))
     elif wave_type == 'descend':
-        # Frecuencia que baja rápidamente (ej. explosión/muerte)
         freqs = np.linspace(freq, freq/4, n_samples)
         wave = np.sign(np.sin(freqs * t * 2 * np.pi))
     elif wave_type == 'noise':
@@ -24,11 +35,8 @@ def generate_square_wave(freq, duration, volume=0.1, wave_type='square'):
         wave = np.sin(freq * t * 2 * np.pi)
         
     wave = wave * volume
-    
-    # Convertir a 16 bits
     sound_array = np.int16(wave * 32767)
     
-    # Stereo
     if channels == 2:
         sound_array = np.column_stack((sound_array, sound_array))
         
@@ -44,16 +52,19 @@ def get_sound(name):
         return _sounds[name]
         
     snd = None
-    if name == "laser":
-        snd = generate_square_wave(880, 0.1, 0.1, 'square')
-    elif name == "dog_hit":
-        snd = generate_square_wave(440, 0.3, 0.1, 'descend')
-    elif name == "bone":
-        snd = generate_square_wave(220, 0.1, 0.1, 'square')
-    elif name == "player_hit":
-        snd = generate_square_wave(110, 0.4, 0.2, 'noise')
-    elif name == "click":
-        snd = generate_square_wave(1200, 0.05, 0.1, 'square')
+    
+    # Solo generamos los sonidos si NO estamos en la web
+    if not is_web:
+        if name == "laser":
+            snd = generate_square_wave(880, 0.1, 0.1, 'square')
+        elif name == "dog_hit":
+            snd = generate_square_wave(440, 0.3, 0.1, 'descend')
+        elif name == "bone":
+            snd = generate_square_wave(220, 0.1, 0.1, 'square')
+        elif name == "player_hit":
+            snd = generate_square_wave(110, 0.4, 0.2, 'noise')
+        elif name == "click":
+            snd = generate_square_wave(1200, 0.05, 0.1, 'square')
         
     _sounds[name] = snd
     return snd
