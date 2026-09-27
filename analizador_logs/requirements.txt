@@ -1,0 +1,3 @@
+# Este proyecto usa solo la librería estándar de Python 3.12
+# No requiere dependencias externas.
+# Librerías usadas: re, os, collections, datetime

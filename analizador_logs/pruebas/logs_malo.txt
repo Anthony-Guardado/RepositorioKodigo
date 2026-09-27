@@ -1,0 +1,10 @@
+[INFO] 2025-01-10 User logged in
+[ERROR] Failed to connect to database
+[WARNING] 2025-13-45 Invalid password attempt
+[INFO] 2025-01-11 User logged out
+esta linea no tiene severidad ni fecha
+[ERROR] 2025-01-12 Timeout on API request
+[DEBUG] 2025-01-12 This severity is not allowed
+[INFO] 2025/01/13 Wrong date separator
+[WARNING] 2025-01-13 Disk usage above 80 percent
+[CRITICAL] 2025-01-13 Unknown severity level
