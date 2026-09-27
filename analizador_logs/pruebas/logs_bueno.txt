@@ -1,0 +1,10 @@
+[INFO] 2025-01-10 User logged in
+[ERROR] 2025-01-10 Failed to connect to database
+[WARNING] 2025-01-11 Invalid password attempt
+[INFO] 2025-01-11 User logged out
+[ERROR] 2025-01-12 Timeout on API request
+[INFO] 2025-01-12 Scheduled backup completed
+[WARNING] 2025-01-13 Disk usage above 80 percent
+[ERROR] 2025-01-13 Null pointer exception in module core
+[INFO] 2025-01-14 New user registered
+[WARNING] 2025-01-14 Multiple login attempts detected
