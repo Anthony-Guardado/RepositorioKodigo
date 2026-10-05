@@ -1,0 +1,19 @@
+{
+  "transactions": [
+    {"source": "banco_central", "id": "BC-001", "amount": "1,250.50 USD", "status": "completed", "date": "2025-01-10T14:23:00"},
+    {"source": "banco_central", "id": "BC-002", "amount": "980.00 MXN", "status": "pending", "date": "2025-01-11T09:15:00"},
+    {"source": "banco_central", "id": "BC-003", "amount": "0 USD", "status": "failed", "date": "2025-01-12T18:45:00"},
+    {"source": "banco_central", "id": "BC-004", "amount": "500.75 EUR", "status": "completado", "date": "2025-01-13T10:00:00"},
+    {"source": "banco_central", "id": "BC-005", "amount": "invalid", "status": "completed", "date": "2025-01-14T12:00:00"},
+
+    {"source": "wallet_app", "tx_id": "W-102", "monto": 850.75, "moneda": "MXN", "estado": "completado", "fecha": "15/01/2025"},
+    {"source": "wallet_app", "tx_id": "W-103", "monto": 120.00, "moneda": "USD", "estado": "pendiente", "fecha": "16/01/2025"},
+    {"source": "wallet_app", "tx_id": "W-104", "monto": -50.00, "moneda": "USD", "estado": "fallido", "fecha": "17/01/2025"},
+    {"source": "wallet_app", "tx_id": "W-105", "monto": 300.00, "moneda": "pesos", "estado": "completado", "fecha": "18/01/2025"},
+    {"source": "wallet_app", "tx_id": "W-106", "monto": 200.00, "moneda": "USD", "estado": "completado"},
+
+    {"source": "exchange_crypto", "transaction_id": "EX-777", "value": 0.025, "currency": "BTC", "state": "pending", "timestamp": 1737076800},
+    {"source": "exchange_crypto", "transaction_id": "EX-778", "value": 1.5, "currency": "ETH", "state": "completed", "timestamp": 1737163200},
+    {"source": "exchange_crypto", "transaction_id": "EX-779", "value": 0.0, "currency": "BTC", "state": "failed", "timestamp": 1737249600}
+  ]
+}

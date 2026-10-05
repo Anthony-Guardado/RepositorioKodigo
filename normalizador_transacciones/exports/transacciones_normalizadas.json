@@ -1,0 +1,167 @@
+{
+  "generated_at": "2026-10-04T23:27:59",
+  "summary": {
+    "total": 13,
+    "validas": 8,
+    "invalidas": 5,
+    "por_estado": {
+      "completed": 5,
+      "pending": 3
+    },
+    "por_fuente": {
+      "banco_central": 5,
+      "wallet_app": 5,
+      "exchange_crypto": 3
+    },
+    "totales_por_moneda": {
+      "USD": "1370.50",
+      "MXN": "2130.75",
+      "EUR": "500.75",
+      "BTC": "0.025",
+      "ETH": "1.5"
+    }
+  },
+  "transactions": [
+    {
+      "id": "BC-001",
+      "source": "banco_central",
+      "amount": 1250.5,
+      "currency": "USD",
+      "status": "completed",
+      "timestamp": "2025-01-10T14:23:00",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "id": "BC-002",
+      "source": "banco_central",
+      "amount": 980.0,
+      "currency": "MXN",
+      "status": "pending",
+      "timestamp": "2025-01-11T09:15:00",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "id": "BC-003",
+      "source": "banco_central",
+      "amount": 0.0,
+      "currency": "USD",
+      "status": "failed",
+      "timestamp": "2025-01-12T18:45:00",
+      "is_valid": false,
+      "errors": [
+        "monto <= 0"
+      ]
+    },
+    {
+      "id": "BC-004",
+      "source": "banco_central",
+      "amount": 500.75,
+      "currency": "EUR",
+      "status": "completed",
+      "timestamp": "2025-01-13T10:00:00",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "id": "BC-005",
+      "source": "banco_central",
+      "amount": null,
+      "currency": null,
+      "status": "completed",
+      "timestamp": "2025-01-14T12:00:00",
+      "is_valid": false,
+      "errors": [
+        "monto no parseable",
+        "moneda no reconocida"
+      ]
+    },
+    {
+      "id": "W-102",
+      "source": "wallet_app",
+      "amount": 850.75,
+      "currency": "MXN",
+      "status": "completed",
+      "timestamp": "2025-01-15T00:00:00",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "id": "W-103",
+      "source": "wallet_app",
+      "amount": 120.0,
+      "currency": "USD",
+      "status": "pending",
+      "timestamp": "2025-01-16T00:00:00",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "id": "W-104",
+      "source": "wallet_app",
+      "amount": -50.0,
+      "currency": "USD",
+      "status": "failed",
+      "timestamp": "2025-01-17T00:00:00",
+      "is_valid": false,
+      "errors": [
+        "monto <= 0"
+      ]
+    },
+    {
+      "id": "W-105",
+      "source": "wallet_app",
+      "amount": 300.0,
+      "currency": "MXN",
+      "status": "completed",
+      "timestamp": "2025-01-18T00:00:00",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "id": "W-106",
+      "source": "wallet_app",
+      "amount": 200.0,
+      "currency": "USD",
+      "status": "completed",
+      "timestamp": null,
+      "is_valid": false,
+      "errors": [
+        "fecha no parseable"
+      ]
+    },
+    {
+      "id": "EX-777",
+      "source": "exchange_crypto",
+      "amount": 0.025,
+      "currency": "BTC",
+      "status": "pending",
+      "timestamp": "2025-01-17T01:20:00",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "id": "EX-778",
+      "source": "exchange_crypto",
+      "amount": 1.5,
+      "currency": "ETH",
+      "status": "completed",
+      "timestamp": "2025-01-18T01:20:00",
+      "is_valid": true,
+      "errors": []
+    },
+    {
+      "id": "EX-779",
+      "source": "exchange_crypto",
+      "amount": 0.0,
+      "currency": "BTC",
+      "status": "failed",
+      "timestamp": "2025-01-19T01:20:00",
+      "is_valid": false,
+      "errors": [
+        "monto <= 0"
+      ]
+    }
+  ]
+}
