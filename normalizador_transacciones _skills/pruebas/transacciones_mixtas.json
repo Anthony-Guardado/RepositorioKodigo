@@ -1,0 +1,7 @@
+{
+  "transactions": [
+    {"source": "banco_central", "id": "BC-200", "amount": "not a number", "status": "completed", "date": "2025-02-01T10:00:00"},
+    {"source": "wallet_app", "tx_id": "W-201", "monto": 10.00, "moneda": "XYZ", "estado": "desconocido", "fecha": "32/13/2025"},
+    {"source": "exchange_crypto", "transaction_id": "EX-901", "value": -5, "currency": "BTC", "state": "completed", "timestamp": 9999999999999}
+  ]
+}
