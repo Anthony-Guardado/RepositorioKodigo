@@ -33,7 +33,6 @@ normalizador_transacciones/
 │   ├── transacciones_ok.json
 │   └── transacciones_mixtas.json
 └── src/
-    ├── __init__.py
     ├── config.py
     ├── models.py
     ├── loaders.py
